@@ -1,0 +1,9 @@
+#!/bin/sh
+
+DIRS=`find . -type d | grep -v ".git"`
+for DIR in $DIRS; do
+	#echo $DIR
+	cd $DIR
+	h-create-system-header
+	cd - >/dev/null
+done

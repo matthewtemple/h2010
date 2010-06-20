@@ -1,0 +1,12 @@
+#!/bin/sh
+
+for host in $@; do
+  ping -c 1 $host >/dev/null 2>&1
+  success=$?
+  if [ $success -eq 0 ]; then
+    echo connecting to $host
+    exec ssh "$host"
+  else
+    echo -n "can't connect via $host..."
+  fi
+done

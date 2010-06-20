@@ -1,0 +1,22 @@
+#!/bin/sh
+
+directory_name=`h-pwd-short`
+repository_name=`h-git-name`
+
+system_header_filename=$directory_name.h
+
+header_files=`ls *.h 2>/dev/null | grep -v $system_header_filename`
+
+if [ "$header_files" = "" ]; then
+	exit 0
+fi
+
+echo "#ifndef ${repository_name}_${directory_name}_${directory_name}_h" > $system_header_filename
+echo >> $system_header_filename
+
+for header_file in $header_files; do
+	echo "#include \"$repository_name/$directory_name/$header_file\"" >> $system_header_filename
+done
+
+echo >> $system_header_filename
+echo "#endif" >> $system_header_filename

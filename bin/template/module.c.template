@@ -1,0 +1,28 @@
+#include "project/system/module.h"
+
+struct project_system_module_t {
+};
+
+project_system_module_t *project_system_module_create()
+{
+  project_system_module_t *module;
+
+  module = malloc(sizeof *module);
+  if (module) {
+
+  } else {
+    h_core_trace("malloc");
+  }
+
+  return module;
+}
+
+void project_system_module_destroy(void *module_void)
+{
+  assert(module_void);
+  project_system_module_t *module;
+
+  module = module_void;
+
+  free(module);
+}

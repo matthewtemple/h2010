@@ -1,0 +1,18 @@
+#!/bin/sh
+
+original_dir=$1
+if [ "" = "$original_dir" ]; then
+    original_dir=$PWD
+fi
+
+if [ -d .git ]; then
+    git_name=`h-pwd-short`
+    cd $original_dir
+    echo $git_name
+    exit 0
+else
+    if [ "/" != "$PWD" ]; then
+        cd ..
+        h-git-name $original_dir
+    fi
+fi

@@ -1,0 +1,23 @@
+demo:
+	@cd .. && $(MAKE) $(MAKECMDGOALS)
+
+release:
+	@cd .. && $(MAKE) $(MAKECMDGOALS)
+
+docs:
+	@cd .. && $(MAKE) $(MAKECMDGOALS)
+
+tags:
+	@cd .. && $(MAKE) $(MAKECMDGOALS)
+
+clean:
+	@cd .. && $(MAKE) $(MAKECMDGOALS)
+
+stats:
+	@cd .. && $(MAKE) $(MAKECMDGOALS)
+
+todo:
+	@cd .. && $(MAKE) $(MAKECMDGOALS)
+
+help:
+	@cd .. && $(MAKE) $(MAKECMDGOALS)

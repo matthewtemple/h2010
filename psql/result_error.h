@@ -1,0 +1,13 @@
+#ifndef h_psql_result_error_h
+#define h_psql_result_error_h
+
+enum h_psql_result_create_error_t {
+  h_psql_result_create_error_unknown,
+  h_psql_result_create_error_h_container_array_create_failed,
+  h_psql_result_create_error_h_container_map_add_failed,
+  h_psql_result_create_error_h_container_map_create_failed,
+  h_psql_result_create_error_malloc_failed,
+};
+typedef enum h_psql_result_create_error_t h_psql_result_create_error_t;
+
+#endif

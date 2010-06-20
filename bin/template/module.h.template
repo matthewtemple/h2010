@@ -1,0 +1,13 @@
+#ifndef project_system_module_h
+#define project_system_module_h
+
+#include "project/external/external.h"
+
+struct project_system_module_t;
+typedef struct project_system_module_t project_system_module_t;
+
+project_system_module_t *project_system_module_create();
+
+void project_system_module_destroy(void *module_void);
+
+#endif
